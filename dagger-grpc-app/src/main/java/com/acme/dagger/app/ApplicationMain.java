@@ -5,9 +5,13 @@ import com.typesafe.config.ConfigFactory;
 import dagger.grpc.server.NettyServerModule;
 import io.grpc.Server;
 
+import javax.inject.Inject;
 import java.io.IOException;
 
 public class ApplicationMain {
+
+    @Inject
+    AcmeServer server;
 
     public ApplicationMain() {
 
@@ -30,7 +34,8 @@ public class ApplicationMain {
         //Server server = grcpComponent.server();
 
         //server.start();
-        Server server = appComponent.server();
+
+        appComponent.inject(this);
 
         server.start();
 

@@ -15,9 +15,10 @@ import javax.inject.Singleton;
                 GrpcImplModule.class
         })
 @Singleton
-public interface GrpcComponent extends DeviceServiceImplServiceDefinition {
+// Try https://github.com/google/dagger/blob/master/javatests/dagger/grpc/functional/server/CoffeeServerWithUnscopedService.java
+public abstract class GrpcComponent extends AcmeServer implements DeviceServiceImplServiceDefinition {
 
-    Server server();
+    //Server server();
 
     @Subcomponent.Builder
     interface Builder {

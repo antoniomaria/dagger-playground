@@ -14,11 +14,13 @@ public interface ApplicationComponent {
 
     // DatabaseSchema databaseSchema();
 
-    @PrivateToDatabase
-    io.grpc.Server server();
+    //@PrivateToDatabase
+    //io.grpc.Server server();
     //@PrivateToDatabase
     //@AppScope
     //GrpcWrapper server();
+
+    AcmeServer server();
 
     // DatabaseConnectionPool databaseConnectionPool();
 
