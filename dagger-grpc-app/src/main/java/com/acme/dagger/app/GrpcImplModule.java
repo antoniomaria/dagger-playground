@@ -14,7 +14,7 @@ import java.util.List;
 @Module
 public abstract class GrpcImplModule {
   @Binds
-  abstract DeviceServiceImplServiceDefinition helloComponent(GrpcComponent grpcComponent);
+  abstract DeviceServiceImplServiceDefinition grpcComponent(GrpcComponent grpcComponent);
 
   // Mandatory dependency for DeviceServiceImplGrpcServiceModule
   @Provides

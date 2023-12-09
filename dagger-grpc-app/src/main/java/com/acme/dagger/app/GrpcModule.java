@@ -9,18 +9,10 @@ import dagger.grpc.server.NettyServerModule;
 public class GrpcModule {
 
     @Provides
-        //@PrivateToDatabase
-    AcmeServer provideDatabase(
-            GrpcComponent.Builder mygrpcComponentBuilder,
-            Config config
-    ) {
+    AcmeServer provideGrpcServer(GrpcComponent.Builder mygrpcComponentBuilder, Config config) {
         System.out.println("config is " + config);
-
         NettyServerModule netty = NettyServerModule.bindingToPort(9090);
-
         GrpcComponent grpc = mygrpcComponentBuilder.nettyServerModule(netty).build();
-//return  new GrpcWrapper(grpc.server());
         return grpc;
-
     }
 }
