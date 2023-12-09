@@ -17,5 +17,6 @@
     <module>dagger-subcomponents-part1</module>
     <module>dagger-subcomponents-part2</module>
     <module>dagger-grpc-helloworld</module>
+    <module>dagger-grpc-app</module>
   </modules>
 </project>
