@@ -7,3 +7,11 @@ This is a go through exercise of lightweight dependency injection framework Dagg
 
 See [Dagger tutorial](https://dagger.dev/tutorial/03-first-command)
  
+## dagger-subcomponent-part1
+
+See [Dagger subcomponents](https://dagger.dev/dev-guide/subcomponents.html)
+
+
+## More links
+
+https://proandroiddev.com/dagger-2-component-builder-1f2b91237856
