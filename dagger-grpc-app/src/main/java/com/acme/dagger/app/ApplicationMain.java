@@ -23,14 +23,14 @@ public class ApplicationMain {
 
         NettyServerModule nettyServerModule = NettyServerModule.bindingToPort(9090);
 
-        GrpcWrapper wrapper = appComponent.server();
+        //GrpcWrapper wrapper = appComponent.server();
 
         //MyGrpcComponent grcpComponent = appComponent.grpcComponent().nettyServerModule(nettyServerModule).build();
 
         //Server server = grcpComponent.server();
 
         //server.start();
-        Server server = wrapper.getServer();
+        Server server = appComponent.server();
 
         server.start();
 

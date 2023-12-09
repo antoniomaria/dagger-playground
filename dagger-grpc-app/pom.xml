@@ -14,12 +14,6 @@
     <gapi.version>2.23.0</gapi.version>
     <proto.version>3.24.2</proto.version>
 
-    <!-- Transitive dependencies from dapr 1.9.0
-    <grpc.version>1.42.1</grpc.version>
-    <gapi.version>2.0.1</gapi.version>
-    <proto.version>3.17.3</proto.version>
-    -->
-
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <protobuf.output.directory>${project.build.directory}/generated-sources</protobuf.output.directory>
   </properties>
@@ -83,13 +77,6 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty</artifactId>
       <version>${grpc.version}</version>
-    </dependency>
-
-
-    <dependency>
-      <groupId>org.mongodb</groupId>
-      <artifactId>mongodb-driver-sync</artifactId>
-      <version>4.10.2</version>
     </dependency>
 
 
@@ -172,46 +159,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>2.4.3</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-            <configuration>
-              <transformers>
-                <transformer
-                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <manifestEntries>
-                    <Main-Class>com.acme.api.v1.DeviceService</Main-Class>
-                    <Build-Number>1.0</Build-Number>
-                  </manifestEntries>
-                </transformer>
-              </transformers>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.eclipse.jkube</groupId>
-        <artifactId>kubernetes-maven-plugin</artifactId>
-        <version>1.14.0</version>
-        <configuration>
-          <images>
-            <image>
-              <name>antoniomariasanchez/acme-service</name>
-              <build>
-                <contextDir>${project.basedir}/src/main/docker-context-dir</contextDir>
-              </build>
-            </image>
-          </images>
-        </configuration>
       </plugin>
     </plugins>
     <extensions>

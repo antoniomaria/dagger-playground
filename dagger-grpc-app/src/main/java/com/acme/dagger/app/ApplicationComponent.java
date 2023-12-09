@@ -1,6 +1,7 @@
 package com.acme.dagger.app;
 
 import dagger.Component;
+import dagger.grpc.server.GrpcService;
 
 @AppScope
 @Component(modules = {AppModule.class,
@@ -8,20 +9,22 @@ import dagger.Component;
 )
 public interface ApplicationComponent {
 
-  // @Singleton
-  // Database database();
+    // @Singleton
+    // Database database();
 
-  // DatabaseSchema databaseSchema();
+    // DatabaseSchema databaseSchema();
 
-  //@PrivateToDatabase
-  //@AppScope
-  GrpcWrapper server();
+    @PrivateToDatabase
+    io.grpc.Server server();
+    //@PrivateToDatabase
+    //@AppScope
+    //GrpcWrapper server();
 
-  // DatabaseConnectionPool databaseConnectionPool();
+    // DatabaseConnectionPool databaseConnectionPool();
 
-  //MyGrpcComponent newGrpcComponent()
+    //MyGrpcComponent newGrpcComponent()
 
-  GrpcComponent.Builder grpcComponent();
+    GrpcComponent.Builder grpcComponent();
 
-  void inject(ApplicationMain main);
+    void inject(ApplicationMain main);
 }

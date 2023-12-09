@@ -9,8 +9,8 @@ import dagger.grpc.server.NettyServerModule;
 public class GrpcModule {
 
   @Provides
-  //@PrivateToDatabase
-  GrpcWrapper provideDatabase(
+  @PrivateToDatabase
+  io.grpc.Server provideDatabase(
       GrpcComponent.Builder mygrpcComponentBuilder,
       Config config
       ) {
@@ -19,7 +19,8 @@ public class GrpcModule {
     NettyServerModule netty = NettyServerModule.bindingToPort(9090);
 
     GrpcComponent grpc = mygrpcComponentBuilder.nettyServerModule(netty).build();
-return  new GrpcWrapper(grpc.server());
+//return  new GrpcWrapper(grpc.server());
+    return grpc.server();
 
   }
 }
