@@ -11,6 +11,9 @@ See [Dagger tutorial](https://dagger.dev/tutorial/03-first-command)
 
 See [Dagger subcomponents](https://dagger.dev/dev-guide/subcomponents.html)
 
+## dagger-scoped-grpc-app
+
+See [Dagger grpc server Binding in call scope](https://dagger.dev/dev-guide/grpc-servers.html) 
 
 ## More links
 
