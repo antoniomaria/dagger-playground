@@ -8,6 +8,7 @@ import com.acme.dagger.grpc.DeviceServiceImplServiceDefinition;
 import dagger.Subcomponent;
 import dagger.grpc.server.CallScoped;
 import dagger.grpc.server.GrpcCallMetadataModule;
+import io.grpc.Server;
 
 @CallScoped
 @Subcomponent(

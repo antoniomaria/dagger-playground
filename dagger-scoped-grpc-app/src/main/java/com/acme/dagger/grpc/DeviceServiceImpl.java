@@ -3,7 +3,9 @@ package com.acme.dagger.grpc;
 import com.acme.api.v1.DevicePb;
 import com.acme.api.v1.DeviceServiceGrpc;
 import com.google.protobuf.FieldMask;
+import dagger.grpc.server.GrpcCallMetadataModule;
 import dagger.grpc.server.GrpcService;
+import io.grpc.Metadata;
 import io.grpc.stub.StreamObserver;
 
 import javax.inject.Inject;
@@ -12,21 +14,13 @@ import javax.inject.Inject;
 public class DeviceServiceImpl extends DeviceServiceGrpc.DeviceServiceImplBase {
 
     @Inject
-    public DeviceServiceImpl() {
-        System.out.println("DeviceServiceImpl init");
-
+    public DeviceServiceImpl(Metadata metadata) {
+        System.out.println("DeviceServiceImpl init "  + metadata);
     }
 
     @Override
     public void getDevice(DevicePb.GetDeviceRequest request, StreamObserver<DevicePb.GetDeviceResponse> responseObserver) {
-
-        FieldMask fieldsProjection = request.getFieldProjections();
-
-        System.out.println("getFieldsProjectino" + fieldsProjection);
-
         System.out.println("Query Device Request received ");
-
-        System.out.println("getTenantCode(): " + request.getTenantCode());
 
         responseObserver.onNext(com.acme.api.v1.DevicePb.GetDeviceResponse.newBuilder().setDevice(createDevice(request.getId())).build());
         responseObserver.onCompleted();
