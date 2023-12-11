@@ -1,0 +1,44 @@
+syntax = "proto3";
+package acme.api.v1;
+
+option java_package = "com.acme.api.v1";
+
+option java_outer_classname = "DevicePb";
+
+import "google/protobuf/field_mask.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "google/type/date.proto";
+
+
+service DeviceService {
+  rpc GetDevice(GetDeviceRequest) returns (GetDeviceResponse) {}
+}
+
+message GetDeviceRequest{
+  string tenant_code = 1;
+  string id = 2; // unique id
+  google.protobuf.FieldMask field_projections = 5;
+}
+
+message GetDeviceResponse{
+  Device device = 1;
+}
+
+
+// Schema for Device
+message Device {
+  string id = 1; // unique id
+  string device_id = 2;
+  double comm_quality = 3;
+  string firmware_version = 4;
+  string hardware_version = 5;
+  string configuration_id = 6;
+  string device_model = 7;
+  google.type.Date warranty_start_time = 8;
+  google.type.Date warranty_end_time = 9;
+  string device_state = 10;
+  string type = 11;
+  string comm_technology = 12;
+
+}

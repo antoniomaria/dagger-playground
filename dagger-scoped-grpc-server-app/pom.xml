@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.acme</groupId>
-  <artifactId>dagger-scoped-grpc-server</artifactId>
+  <artifactId>dagger-scoped-grpc-app</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <name>dagger-scoped-grpc-server</name>
+  <name>dagger-scoped-grpc-app</name>
   <properties>
     <java.version>17</java.version>
     <!-- Lastest -->

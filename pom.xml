@@ -19,5 +19,6 @@
     <module>dagger-grpc-helloworld</module>
     <module>dagger-grpc-app</module>
     <module>dagger-scoped-grpc-server</module>
+    <module>dagger-scoped-grpc-server-app</module>
   </modules>
 </project>
