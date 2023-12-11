@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         int port = 9090;
-
+/*
         MyComponent component =
                 DaggerMyComponent.builder()
                         .nettyServerModule(NettyServerModule.bindingToPort(port))
@@ -19,6 +19,6 @@ public class Main {
         server.start();
 
         System.out.println("Sever listing in port " + port);
-        server.awaitTermination();
+        server.awaitTermination();*/
     }
 }
