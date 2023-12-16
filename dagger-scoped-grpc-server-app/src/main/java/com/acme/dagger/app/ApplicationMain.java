@@ -15,7 +15,7 @@ public class ApplicationMain {
     public void run() throws IOException, InterruptedException {
         Config config = ConfigFactory.load();
 
-        ApplicationComponent appComponent = DaggerApplicationComponent.builder().appModule(new AppModule(config)).build();
+        ApplicationComponent appComponent = DaggerApplicationComponent.factory().create(config);
 
         appComponent.inject(this);
 

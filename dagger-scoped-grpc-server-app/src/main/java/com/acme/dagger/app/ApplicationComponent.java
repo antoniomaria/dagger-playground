@@ -1,10 +1,14 @@
 package com.acme.dagger.app;
 
+import com.typesafe.config.Config;
+import dagger.BindsInstance;
 import dagger.Component;
 
 @AppScope
-@Component(modules = {AppModule.class,
-        GrpcModule.class}
+@Component(modules = {
+//        AppModule.class,
+        GrpcModule.class
+}
 )
 public interface ApplicationComponent {
 
@@ -28,4 +32,9 @@ public interface ApplicationComponent {
     MyComponent.Builder grpcComponent();
 
     void inject(ApplicationMain main);
+
+    @Component.Factory
+    interface Factory {
+        ApplicationComponent create(@BindsInstance Config applicationConfig);
+    }
 }
